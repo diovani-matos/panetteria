@@ -1,0 +1,107 @@
+@import "../../style/mixins.scss";
+@import "../../index.scss";
+
+.navbar {
+  z-index: 1000;
+
+  &__container {
+    padding-block: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+
+    img {
+      width: 8.5rem;
+    }
+
+    @include respond(phone) {
+      padding-block: 1rem;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    flex: 1;
+
+    @include respond(tablet) {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      align-items: center;
+      padding-block: 2rem;
+      gap: 1rem;
+      background-color: $pastry;
+      animation: navAnimation 0.5s ease;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+
+    @include respond(tablet) {
+      flex-direction: column;
+    }
+  }
+
+  li a {
+    font-weight: 500;
+    color: $dark-gray;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-pink;
+    }
+  }
+
+  #btn__nav a{
+    color: #000;
+  }
+
+  &__menu {
+    display: none;
+    cursor: pointer;
+
+    @include respond(tablet) {
+      margin-left: auto;
+      display: grid;
+      place-content: center;
+      transition: all 0.3s ease;
+    }
+
+    svg {
+      font-size: 1.2rem;
+      padding: 0.7rem;
+    }
+  }
+
+  .show-nav {
+    display: flex;
+  }
+
+  .bg-color {
+    background-color: $green;
+    border-radius: 0.2rem;
+
+    svg {
+      color: #fff;
+    }
+  }
+}
+
+@keyframes navAnimation {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}

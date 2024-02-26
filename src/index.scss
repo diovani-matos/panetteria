@@ -1,0 +1,87 @@
+@import "./style/mixins.scss";
+
+$dark: #111827;
+$primary-pink: #ff7377;
+$secondary-pink: #f06479;
+$pastry: #f3ebe8;
+$gray: #6a7280;
+$dark-gray: #374151;
+$green: #9ed3ba;
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  text-decoration: none;
+  outline: 0;
+  list-style: none;
+}
+
+body {
+  color: $dark;
+  background-color: $pastry;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+}
+
+button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.button-outline {
+  color: #000;
+  background-color: transparent;
+  border: 1px solid $dark;
+
+  &:hover {
+    background-color: $primary-pink;
+  }
+}
+
+.button-primary {
+  background-color: $primary-pink;
+  color: #fff;
+  font-weight: 500;
+  padding-block: 0.8rem;
+
+  &:hover {
+    background-color: $secondary-pink;
+  }
+}
+
+.p-1 {
+  color: $dark-gray;
+  letter-spacing: -0.015rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.p-2 {
+  letter-spacing: -0.015rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $gray;
+}
+
+h2,
+h3 {
+  color: $dark;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+}
